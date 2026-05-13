@@ -1,2 +1,3 @@
-CONNECTION_STR = "Connection_String"
+import os
+CONNECTION_STR = os.getenv("EVENTHUB_CONNECTION_STRING")
 EVENT_HUB_NAME = "iot-hub"

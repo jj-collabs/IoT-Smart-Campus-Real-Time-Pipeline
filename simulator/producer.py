@@ -4,8 +4,10 @@ import random
 import uuid
 from datetime import datetime, timedelta
 from azure.eventhub import EventHubProducerClient, EventData
-
-CONNECTION_STR = "Connection_String"
+from dotenv import load_dotenv
+import os
+load_dotenv()
+CONNECTION_STR = os.getenv("EVENTHUB_CONNECTION_STRING")
 EVENT_HUB_NAME = "iot-hub"
 
 producer = EventHubProducerClient.from_connection_string(
